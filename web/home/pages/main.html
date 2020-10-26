@@ -31,6 +31,7 @@
     <div class="row">
         <div class="col-md-8">
             <h1>Live</h1>
+            <div id="overviewer"></div>
         </div>
         <div class="col-md-4">
             <h1>Latest Capture</h1>
@@ -38,3 +39,9 @@
     </div>
 </div>
 </body>
+
+<script>
+    $(function(){
+      $("#overviewer").load("overviewer/mcmap/index.html");
+    });
+</script>

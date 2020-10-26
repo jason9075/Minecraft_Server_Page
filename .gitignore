@@ -40,6 +40,6 @@ tmtagsHistory
 *.sublime-workspace
 .bundle
 
-static/overviewer/*
-!static/overviewer/.keep
+web/overviewer/*
+!web/overviewer/.keep
 
