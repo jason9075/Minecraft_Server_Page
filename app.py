@@ -2,7 +2,7 @@ from flask import Flask
 
 from web.home.view import home
 from web.overviewer.view import ov
-from web.settings import load
+from settings import load
 
 app = Flask(__name__)
 app.register_blueprint(home, url_prefix='/')

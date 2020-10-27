@@ -40,7 +40,7 @@ tmtagsHistory
 *.sublime-workspace
 .bundle
 
-web/.env
-web/overviewer/*
-!web/overviewer/.keep
+.env
+web/overviewer/pages/*
+!web/overviewer/pages/.keep
 
