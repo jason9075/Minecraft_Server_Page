@@ -1,48 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <title>Jason Kuan Minecraft Server</title>
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script
-            src="https://code.jquery.com/jquery-1.12.4.min.js"
-            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-            crossorigin="anonymous"></script>
+	<link
+		rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+		crossorigin="anonymous"
+	/>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+		rel="stylesheet"
+	/>
+	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"> -->
+
+	<style>
+		body {
+			background-color: #fafbfe;
+			font-family: "Roboto", sans-serif;
+		}
+		#home-img {
+			background-image: url(../static/minecraft-home-img.jpg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 550px;
+		}
+		#collapsePlayers {
+			transition: all 0.5s ease;
+		}
+
+		[class*="shadow"] {
+			transition: all 0.2s ease;
+		}
+
+		.card {
+			cursor: default;
+		}
+		.card-icon {
+			max-width: 96px;
+			max-height: 96px;
+		}
+		.card[data-toggle] {
+			cursor: pointer;
+		}
+		.card[data-toggle]:hover {
+			transform: translateY(-8px) !important;
+			box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.125) !important;
+		}
+		footer {
+			width: 100%;
+			background-color: #262626;
+			color: #fff;
+			font-size: 0.8rem;
+		}
+	</style>
 </head>
 <body>
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Jason Kuan's Minecraft Server</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Jason Kuan's Minecraft Server</a>
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!--<ul class="navbar-nav mr-auto">-->
-                <!--<li class="nav-item active">-->
-                    <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                    <!--<a class="nav-link" href="#">Link</a>-->
-                <!--</li>-->
-            <!--</ul>-->
-        </div>
-    </nav>
-    <div class="row">
-        <div class="col-md-8">
-            <h4>世界地圖 <a href="overviewer/">展開</a> </h4>
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="overviewer">
-                </iframe>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <h4>狀態</h4>
-            版本: {{version}} <br/>
-            人數: {{current}}/{{max_number}} <br/>
-            玩家: <br/>
-            {{players}} <br/>
-        </div>
-    </div>
-</div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="overviewer/">World Map</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div id="home-img"></div>
+	<div class="container my-5">
+		<div class="row">
+			<div class="col-12 col-md-6 pb-3">
+				<div class="card text-center align-items-center border-0 shadow">
+					<div class="card-icon">
+						<img src="../static/minecraft-icon.png" alt="" class="card-img-top" />
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Minecraft</h5>
+						<p class="card-text">version: {{version}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 pb-3">
+				<div
+					class="card text-center align-items-center border-0 shadow"
+					data-toggle="collapse"
+					data-target="#collapsePlayers"
+				>
+					<div class="card-icon">
+						<img src="../static/minecraft-main-character.png" alt="" class="card-img-top" />
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Online Memebrs</h5>
+						<p class="card-text">{{current}}/{{max_number}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 pb-3">
+				<ul id="collapsePlayers" class="list-group border-0 shadow collapse">
+					<li class="list-group-item">Capillary J</li>
+					<li class="list-group-item">Crusader</li>
+					<li class="list-group-item">Unidentified</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="jumbotron mx-5 my-3 text-center">
+		<h1 class="display-4">Hello, world!</h1>
+		<p class="lead">
+			This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
+			information.
+		</p>
+		<hr class="my-4" />
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe src="overviewer"> </iframe>
+		</div>
+		<a class="btn btn-success btn-lg mt-4" href="#" role="button">Come and join us!</a>
+	</div>
+	<footer>
+		<div class="container py-2 py-md-3 py-lg-4">
+			<div class="row text-center">
+				<div class="col-12">JasonKuan's Minecraft Server</div>
+				<div class="col-12">Copyright © JK All rights reserved</div>
+			</div>
+		</div>
+	</footer>
+	<script
+		src="https://code.jquery.com/jquery-1.12.4.min.js"
+		integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+		crossorigin="anonymous"
+	></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"
+	></script>
 </body>

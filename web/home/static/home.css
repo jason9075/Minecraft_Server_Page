@@ -1,0 +1,13 @@
+#home-img {
+  background-image: url(../static/minecraft-home-img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 550px;
+}
+
+#collapsePlayers {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/*# sourceMappingURL=home.css.map */
