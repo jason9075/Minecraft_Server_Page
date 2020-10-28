@@ -1,0 +1,37 @@
+body {
+  background-color: #fafbfe;
+  font-family: "Roboto", sans-serif;
+}
+
+[class*="shadow"] {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.card {
+  cursor: default;
+}
+
+.card[data-toggle] {
+  cursor: pointer;
+}
+
+.card[data-toggle]:hover {
+  -webkit-transform: translateY(-8px) !important;
+          transform: translateY(-8px) !important;
+  -webkit-box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.125) !important;
+          box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.125) !important;
+}
+
+.card .card-icon {
+  max-width: 96px;
+  max-height: 96px;
+}
+
+footer {
+  width: 100%;
+  background-color: #262626;
+  color: #fff;
+  font-size: 0.8rem;
+}
+/*# sourceMappingURL=site.css.map */
