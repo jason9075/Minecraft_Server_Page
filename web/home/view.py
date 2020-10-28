@@ -4,7 +4,10 @@ from distutils.util import strtobool
 from flask import Blueprint, render_template
 from mcstatus import MinecraftServer
 
-home = Blueprint('home', __name__, template_folder='pages', static_folder='static')
+home = Blueprint('home', __name__,
+                 template_folder='pages',
+                 static_url_path='',
+                 static_folder='static')
 
 
 @home.route('/')
