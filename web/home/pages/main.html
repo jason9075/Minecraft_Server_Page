@@ -11,53 +11,11 @@
 		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
 		rel="stylesheet"
 	/>
-	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"> -->
-
-	<style>
-		body {
-			background-color: #fafbfe;
-			font-family: "Roboto", sans-serif;
-		}
-		#home-img {
-			background-image: url(minecraft-home-img.jpg);
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-			height: 550px;
-		}
-		#collapsePlayers {
-			transition: all 0.5s ease;
-		}
-
-		[class*="shadow"] {
-			transition: all 0.2s ease;
-		}
-
-		.card {
-			cursor: default;
-		}
-		.card-icon {
-			max-width: 96px;
-			max-height: 96px;
-		}
-		.card[data-toggle] {
-			cursor: pointer;
-		}
-		.card[data-toggle]:hover {
-			transform: translateY(-8px) !important;
-			box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.125) !important;
-		}
-		footer {
-			width: 100%;
-			background-color: #262626;
-			color: #fff;
-			font-size: 0.8rem;
-		}
-	</style>
+	<link rel="stylesheet" href="css/site.css" />
+	<link rel="stylesheet" href="css/home.css" />
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 		<a class="navbar-brand" href="#">Jason Kuan's Minecraft Server</a>
 		<button
 			class="navbar-toggler"
@@ -85,7 +43,7 @@
 			<div class="col-12 col-md-6 pb-3">
 				<div class="card text-center align-items-center border-0 shadow">
 					<div class="card-icon">
-						<img src="minecraft-icon.png" alt="" class="card-img-top" />
+						<img src="assets/minecraft-icon.png" alt="" class="card-img-top" />
 					</div>
 					<div class="card-body">
 						<h5 class="card-title">Minecraft</h5>
@@ -100,7 +58,7 @@
 					data-target="#collapsePlayers"
 				>
 					<div class="card-icon">
-						<img src="minecraft-main-character.png" alt="" class="card-img-top" />
+						<img src="assets/minecraft-main-character.png" alt="" class="card-img-top" />
 					</div>
 					<div class="card-body">
 						<h5 class="card-title">Online Memebrs</h5>
@@ -119,10 +77,7 @@
 	</div>
 	<div class="jumbotron mx-5 my-3 text-center">
 		<h1 class="display-4">Hello, world!</h1>
-		<p class="lead">
-			This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
-			information.
-		</p>
+		<p class="lead">Welcome to Jason Kuan's Minecraft world!!</p>
 		<hr class="my-4" />
 		<div class="embed-responsive embed-responsive-16by9">
 			<iframe src="overviewer"> </iframe>
