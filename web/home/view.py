@@ -53,5 +53,7 @@ def request_server_info(loop, f):
         response = loop.run_until_complete(future)
     except asyncio.TimeoutError:
         print('MC Server timeout.')
+    except ConnectionRefusedError:
+        print('MC Server down.')
 
     return response
