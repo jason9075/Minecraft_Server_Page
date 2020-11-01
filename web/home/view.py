@@ -18,7 +18,7 @@ def index():
     version = 'N/A'
     max_number = 'null'
     current = 'null'
-    players = None
+    players = []
 
     server = MinecraftServer.lookup(os.getenv("MC_SERVER_HOST"))
 
@@ -35,9 +35,6 @@ def index():
     query = request_server_info(loop, server.query)
     if query is not None:
         players = query.players.names
-
-    if strtobool(os.getenv("IS_DEBUG")):
-        players = ["Capillary_J,Unidentified"]
 
     return render_template('main.html',
                            version=version,
