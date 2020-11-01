@@ -68,9 +68,9 @@
 			</div>
 			<div class="col-12 pb-3">
 				<ul id="collapsePlayers" class="list-group border-0 shadow collapse">
-					<li class="list-group-item">Capillary J</li>
-					<li class="list-group-item">Crusader</li>
-					<li class="list-group-item">Unidentified</li>
+					{% for player in players -%}
+					<li class="list-group-item"><img src="https://minotar.net/avatar/{{player}}/32.png" alt="" /> {{player}}</li>
+					{%- endfor %}
 				</ul>
 			</div>
 		</div>
