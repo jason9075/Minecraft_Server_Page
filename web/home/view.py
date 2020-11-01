@@ -34,7 +34,10 @@ def index():
 
     query = request_server_info(loop, server.query)
     if query is not None:
-        players = query.players
+        players = query.players.names
+
+    if strtobool(os.getenv("IS_DEBUG")):
+        players = ["Capillary_J,Unidentified"]
 
     return render_template('main.html',
                            version=version,
