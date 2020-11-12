@@ -27,6 +27,7 @@ def main():
     message = args.message
 
     payload = f'username={BOT_NAME}&avatar_url={DISCORD_AVATAR_URL}&content={message}'
+    payload = payload.encode("utf-8")
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
     }
